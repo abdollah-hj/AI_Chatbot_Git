@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chat Assistant</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Neon Background -->
+    <div class="neon-bg">
+        <div class="neon-circle"></div>
+        <div class="neon-circle"></div>
+        <div class="neon-circle"></div>
+        <div class="neon-circle"></div>
+        <div class="neon-circle"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="img.jpg" alt="AI Assistant Logo" class="d-inline-block align-text-top me-2 glowing-image-sm" style="height: 30px; width: 30px;">
+                AI Chat Assistant
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="features.html">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pricing.html">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                </ul>
+                <div class="d-flex" id="authButtons">
+                    <a href="login.html" class="btn btn-outline-light me-2">Login</a>
+                    <a href="register.html" class="btn btn-light">Sign Up</a>
+                </div>
+                <div class="dropdown d-none" id="userDropdown">
+                    <button class="btn btn-light dropdown-toggle" type="button" id="userMenuButton" data-bs-toggle="dropdown">
+                        <i class="bi bi-person-circle me-1"></i><span id="username">User</span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="profile.html">Profile</a></li>
+                        <li><a class="dropdown-item" href="chat-history.html">Chat History</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#" id="logoutButton">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="py-5 position-relative" style="background: rgba(15, 15, 35, 0.7);">
+        <!-- Add extra neon elements for this section -->
+        <div class="position-absolute top-0 start-0 w-100 h-100 overflow-hidden">
+            <div class="position-absolute" style="width: 400px; height: 400px; background: #ff00cc; filter: blur(120px); opacity: 0.1; top: 20%; left: 5%; animation: float 18s infinite alternate;"></div>
+            <div class="position-absolute" style="width: 350px; height: 350px; background: #00ffcc; filter: blur(120px); opacity: 0.1; bottom: 10%; right: 5%; animation: float 15s infinite alternate-reverse;"></div>
+        </div>
+        
+        <div class="container px-5 position-relative">
+            <div class="row gx-5 align-items-center justify-content-center">
+                <div class="col-lg-8 col-xl-7 col-xxl-6">
+                    <div class="my-5">
+                        <h1 class="display-5 fw-bold mb-3 text-white">Experience the power of AI conversation</h1>
+                        <p class="lead mb-4 text-white-50">Our AI assistant is designed to help you with information, tasks, and creative ideas. Try it now and see how it can transform your productivity.</p>
+                        <div class="d-grid gap-3 d-sm-flex">
+                            <a class="btn btn-primary btn-lg px-4" href="chat.html" id="tryChatButton" style="box-shadow: 0 0 15px rgba(78, 115, 223, 0.7);">Try Chat Now</a>
+                            <a class="btn btn-outline-light btn-lg px-4" href="features.html">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
+                    <div class="position-relative" style="display: inline-block;">
+                        <!-- Extra glow background -->
+                        <div class="position-absolute top-0 start-0 w-100 h-100" style="background: radial-gradient(circle, rgba(0,255,255,0.15) 0%, rgba(0,0,0,0) 70%); filter: blur(20px); transform: scale(1.2);"></div>
+                        
+                        <!-- The image with glowing effect - using a fallback URL in case local file is missing -->
+                        <img src="img.jpg" alt="AI Assistant Avatar" class="img-fluid rounded-circle glowing-image" style="max-width: 80%; position: relative; z-index: 2;" onerror="this.onerror=null; this.src='https://i.imgur.com/YourImageID.jpg';">
+                        
+                        <!-- Animated ring -->
+                        <div class="position-absolute top-0 start-0 w-100 h-100" style="border: 3px solid rgba(0,255,255,0.4); border-radius: 50%; animation: pulse-ring 2s infinite; transform: scale(0.8); z-index: 1;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Features Section with enhanced neon styling -->
+    <section class="py-5 bg-dark bg-opacity-50 position-relative">
+        <!-- Extra neon elements for this section -->
+        <div class="position-absolute top-0 start-0 w-100 h-100 overflow-hidden">
+            <div class="position-absolute" style="width: 300px; height: 300px; background: #ff00ff; filter: blur(100px); opacity: 0.1; top: 10%; left: 20%; animation: float 20s infinite alternate;"></div>
+            <div class="position-absolute" style="width: 400px; height: 400px; background: #00ffff; filter: blur(100px); opacity: 0.1; bottom: 10%; right: 10%; animation: float 15s infinite alternate-reverse;"></div>
+            <div class="position-absolute" style="width: 250px; height: 250px; background: #3377ff; filter: blur(80px); opacity: 0.1; top: 50%; left: 50%; transform: translate(-50%, -50%); animation: pulse 8s infinite;"></div>
+        </div>
+        
+        <div class="container position-relative">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-white">Key Features</h2>
+                <p class="lead text-white-50">Discover what makes our AI Chat Assistant special</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-lg" style="background: rgba(25, 25, 45, 0.7); border: 1px solid rgba(100, 100, 255, 0.3); box-shadow: 0 0 20px rgba(78, 115, 223, 0.4);">
+                        <div class="card-body text-center p-4">
+                            <div class="feature bg-primary bg-gradient text-white rounded-circle mb-4" style="box-shadow: 0 0 15px #4e73df;">
+                                <i class="bi bi-chat-dots"></i>
+                            </div>
+                            <h5 class="card-title text-white">Natural Conversations</h5>
+                            <p class="card-text text-white-50">Engage in human-like conversations with our advanced AI model.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-lg" style="background: rgba(25, 25, 45, 0.7); border: 1px solid rgba(100, 100, 255, 0.3); box-shadow: 0 0 20px rgba(78, 115, 223, 0.4);">
+                        <div class="card-body text-center p-4">
+                            <div class="feature bg-primary bg-gradient text-white rounded-circle mb-4" style="box-shadow: 0 0 15px #4e73df;">
+                                <i class="bi bi-shield-check"></i>
+                            </div>
+                            <h5 class="card-title text-white">Secure & Private</h5>
+                            <p class="card-text text-white-50">Your conversations are encrypted and your privacy is our priority.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-lg" style="background: rgba(25, 25, 45, 0.7); border: 1px solid rgba(100, 100, 255, 0.3); box-shadow: 0 0 20px rgba(78, 115, 223, 0.4);">
+                        <div class="card-body text-center p-4">
+                            <div class="feature bg-primary bg-gradient text-white rounded-circle mb-4" style="box-shadow: 0 0 15px #4e73df;">
+                                <i class="bi bi-lightning-charge"></i>
+                            </div>
+                            <h5 class="card-title text-white">Fast & Reliable</h5>
+                            <p class="card-text text-white-50">Get instant responses powered by state-of-the-art AI technology.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add this section after the Features section and before the Call to Action section -->
+    <section class="py-5 position-relative">
+        <!-- Extra neon elements for this section -->
+        <div class="position-absolute top-0 start-0 w-100 h-100 overflow-hidden">
+            <div class="position-absolute" style="width: 350px; height: 350px; background: #00ffaa; filter: blur(120px); opacity: 0.1; top: 30%; left: 10%; animation: float 25s infinite alternate;"></div>
+            <div class="position-absolute" style="width: 300px; height: 300px; background: #ff00cc; filter: blur(120px); opacity: 0.1; bottom: 20%; right: 15%; animation: float 20s infinite alternate-reverse;"></div>
+        </div>
+        
+        <div class="container position-relative">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <div class="mb-5">
+                        <h2 class="fw-bold text-white mb-4">Meet Your AI Assistant</h2>
+                        <p class="lead text-white-50 mb-5">Powered by advanced AI technology to provide intelligent, helpful responses to your questions</p>
+                    </div>
+                    
+                    <!-- Neon Avatar Image with Glow Effect -->
+                    <div class="position-relative mb-5" style="max-width: 500px; margin: 0 auto;">
+                        <div class="position-absolute top-0 start-0 w-100 h-100" style="background: radial-gradient(circle, rgba(0,255,255,0.1) 0%, rgba(0,0,0,0) 70%); filter: blur(20px);"></div>
+                        
+                        <!-- Use img.jpg with glowing-image class -->
+                        <img src="img.jpg" alt="AI Assistant Avatar" class="img-fluid rounded-circle glowing-image">
+                        
+                        <!-- Animated Glow Ring -->
+                        <div class="position-absolute top-0 start-0 w-100 h-100" style="border: 3px solid rgba(0,255,255,0.5); border-radius: 50%; animation: pulse-ring 2s infinite;"></div>
+                    </div>
+                    
+                    <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+                        <a href="chat.html" class="btn btn-primary btn-lg px-5 py-3" style="box-shadow: 0 0 15px rgba(78, 115, 223, 0.7);">
+                            Start Chatting Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-5 bg-primary">
+        <div class="container px-5">
+            <div class="row gx-5 justify-content-center">
+                <div class="col-lg-8 col-xl-6">
+                    <div class="text-center text-white">
+                        <h2 class="fw-bold">Ready to get started?</h2>
+                        <p class="lead mb-4">Create an account now and start chatting with our AI assistant.</p>
+                        <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+                            <a class="btn btn-light btn-lg px-4" href="register.html">Sign Up Free</a>
+                            <a class="btn btn-outline-light btn-lg px-4" href="chat.html">Try Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4 bg-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5 class="text-white">AI Chat Assistant</h5>
+                    <p class="text-muted small">Powered by advanced AI technology to provide intelligent conversations and assistance.</p>
+                    <div class="d-flex">
+                        <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-white">Links</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li class="mb-2"><a href="index.html" class="text-muted">Home</a></li>
+                        <li class="mb-2"><a href="features.html" class="text-muted">Features</a></li>
+                        <li class="mb-2"><a href="pricing.html" class="text-muted">Pricing</a></li>
+                        <li><a href="about.html" class="text-muted">About</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-white">Resources</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li class="mb-2"><a href="#" class="text-muted">Documentation</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted">API</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted">Blog</a></li>
+                        <li><a href="#" class="text-muted">Support</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="text-white">Newsletter</h5>
+                    <p class="text-muted small">Subscribe to receive updates and news about our AI assistant.</p>
+                    <form class="mb-3">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Email address">
+                            <button class="btn btn-primary" type="button">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="row align-items-center">
+                <div class="col-md-6 small text-muted">
+                    &copy; 2023 AI Chat Assistant. All Rights Reserved.
+                </div>
+                <div class="col-md-6 text-md-end small">
+                    <a href="#" class="text-muted me-3">Privacy Policy</a>
+                    <a href="#" class="text-muted me-3">Terms of Use</a>
+                    <a href="#" class="text-muted">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+    <style>
+    @keyframes pulse {
+        0%, 100% {
+            opacity: 0.05;
+            transform: translate(-50%, -50%) scale(1);
+        }
+        50% {
+            opacity: 0.2;
+            transform: translate(-50%, -50%) scale(1.2);
+        }
+    }
+    @keyframes pulse-ring {
+        0% {
+            transform: scale(0.95);
+            opacity: 0.7;
+        }
+        50% {
+            transform: scale(1.05);
+            opacity: 0.3;
+        }
+        100% {
+            transform: scale(0.95);
+            opacity: 0.7;
+        }
+    }
+    </style>
+    <script>
+    // Check if the SVG avatar is visible and fallback to an image if needed
+    document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+            const avatarContainer = document.querySelector('.neon-avatar-container');
+            if (avatarContainer && !avatarContainer.offsetHeight) {
+                // If the container has no height, the SVG might not be rendering
+                const fallbackImg = document.createElement('img');
+                fallbackImg.src = 'https://cdn.pixabay.com/photo/2023/05/23/15/26/ai-8012324_1280.jpg';
+                fallbackImg.alt = 'AI Assistant';
+                fallbackImg.className = 'img-fluid rounded-circle';
+                fallbackImg.style.border = '2px solid rgba(0,255,255,0.3)';
+                fallbackImg.style.boxShadow = '0 0 30px rgba(0,255,255,0.5)';
+                
+                // Replace the container with the image
+                avatarContainer.parentNode.replaceChild(fallbackImg, avatarContainer);
+            }
+        }, 1000); // Check after 1 second
+    });
+    </script>
+</body>
+</html> 
